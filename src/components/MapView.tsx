@@ -35,7 +35,6 @@ export default function MapView(props:MapProps) {
         if (mapDivRef.current === null) {
             return;
         }
-        console.log(mapDivRef.current)
         mapRef.current = new Map({
             target: mapDivRef.current,
             layers: [

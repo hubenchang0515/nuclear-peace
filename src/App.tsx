@@ -67,7 +67,6 @@ function App() {
         setState('prepare');
     }, []);
 
-    console.log(state)
     const onLaunch = useCallback((pos:[number, number]) => {
         if (state !== 'ready') {
             return;
