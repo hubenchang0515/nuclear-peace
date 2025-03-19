@@ -137,7 +137,7 @@ export default function MapView(props:MapProps) {
         });
 
         mapRef.current?.addLayer(layer);
-        mapRef.current?.getView().fit(thermalRadiationCircle.getExtent());
+        mapRef.current?.getView().fit(thermalRadiationCircle.getExtent(), {duration: 200});
     }, [props.boom]);
 
     return (
