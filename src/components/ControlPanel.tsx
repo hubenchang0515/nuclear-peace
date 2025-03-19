@@ -18,7 +18,7 @@ export default function ControlPanel(props:ControlPanelProps) {
             <Stack sx={{p:1}} spacing={1}>
                 <FormControl variant="standard">
                     <InputLabel>Nuclear Missle</InputLabel>
-                    <Select value={props.tnt} onChange={(ev)=>props.onSetTnt?.(ev.target.value as number)}>
+                    <Select disabled={props.state === 'ready'} value={props.tnt} onChange={(ev)=>props.onSetTnt?.(ev.target.value as number)}>
                         {
                             props.nukes?.map((item, index) => {
                                 return <MenuItem key={index} value={item.tnt}>{item.name}</MenuItem>
