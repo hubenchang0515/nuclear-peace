@@ -6,7 +6,7 @@ import XYZ from "ol/source/XYZ";
 import TileLayer from "ol/layer/Tile";
 import View from "ol/View";
 import { fromLonLat } from "ol/proj";
-import { Feature, Overlay } from 'ol';
+import { Feature, MapBrowserEvent, Overlay } from 'ol';
 import { Circle } from 'ol/geom';
 import Style from 'ol/style/Style';
 import Fill from 'ol/style/Fill';
@@ -61,7 +61,11 @@ export default function MapView(props:MapProps) {
 
     // 绑定点击事件
     useEffect(() => {
-        mapRef.current?.on("click", (ev) => {props.onClick?.([ev.coordinate[0], ev.coordinate[1]])})
+        const fn = (ev:MapBrowserEvent<any>) => {props.onClick?.([ev.coordinate[0], ev.coordinate[1]])};
+        mapRef.current?.on("click", fn);
+        return () => {
+            mapRef.current?.un("click", fn);
+        }
     }, [props.onClick])
     
     // 播放爆炸动画
