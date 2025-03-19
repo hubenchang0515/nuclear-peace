@@ -4,6 +4,8 @@ import Cursor from './components/Cursor';
 import { useCallback, useState } from 'react';
 import ControlPanel from './components/ControlPanel';
 
+import standby from './assets/audio/standby.mp3';
+import cancel from './assets/audio/cancel.mp3';
 import snukexpl from './assets/audio/snukexpl.mp3';
 import snukread from './assets/audio/snukread.mp3';
 import snuksire from './assets/audio/snuksire.mp3';
@@ -56,10 +58,12 @@ function App() {
 
     const onReady = useCallback(() => {
         setState('ready');
+        play(standby);
         play(snukread);
     }, []);
 
     const onCancel = useCallback(() => {
+        play(cancel);
         setState('prepare');
     }, []);
 
