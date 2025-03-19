@@ -1,0 +1,47 @@
+.normal-cursor {
+    cursor: none;
+    pointer-events: none;
+    position: fixed;
+    z-index: 99999;
+    width: 55px;
+    height: 43px;
+    background: url('../assets/image/mouse.png') no-repeat;
+    animation: normal-cursor 1s steps(1) infinite;
+}
+
+@keyframes normal-cursor {
+    0% {background-position: -715px -43px;}
+    10% {background-position: -770px -43px;}
+    20% {background-position: -825px -43px;}
+    30% {background-position: -880px -43px;}
+    40% {background-position: -935px -43px;}
+    50% {background-position: 0 -86px;}
+    60% {background-position: -55px -86px;}
+    70% {background-position: -110px -86px;}
+    80% {background-position: -165px -86px;}
+    90% {background-position: -220px -86px;}
+}
+
+.nuclear-cursor {
+    cursor: none;
+    pointer-events: none;
+    position: fixed;
+    z-index: 99999;
+    width: 55px;
+    height: 43px;
+    background: url('../assets/image/mouse.png') no-repeat;
+    animation: nuclear-cursor 1s steps(1) infinite;
+}
+
+@keyframes nuclear-cursor {
+    0% {background-position: -715px -731px;}
+    10% {background-position: -770px -731px;}
+    20% {background-position: -825px -731px;}
+    30% {background-position: -880px -731px;}
+    40% {background-position: -935px -731px;}
+    50% {background-position: 0 -774px;}
+    60% {background-position: -55px -774px;}
+    70% {background-position: -110px -774px;}
+    80% {background-position: -165px -774px;}
+    90% {background-position: -220px -774px;}
+}
