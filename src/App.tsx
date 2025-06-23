@@ -58,8 +58,8 @@ function App() {
     ];
 
     const [state, setState] = useState<'ready' | 'prepare'>('prepare');
-    const [tnt, setTnt] = useState(nukes[0].tnt);
-    const [boom, setBoom] = useState<[number, number]>([NaN, NaN]);
+    const [tnt, setTnt] = useState(nukes[0].tnt);   // TNT 当量
+    const [boom, setBoom] = useState<[number, number]>([NaN, NaN]); // 爆炸中心点坐标
 
     const onReady = useCallback(() => {
         setState('ready');
